@@ -53,4 +53,15 @@ public class PlayerMove : MonoBehaviour
         }
 
     }
+
+    //オブジェクトに触れたかを検知するコードを追加
+
+    private void OnTriggerEnter(Collider other)//otherにはぶつかったオブジェクトが入れられる
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("Enemy");
+            Destroy(this.gameObject);
+        }
+    }
 }
