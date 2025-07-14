@@ -15,4 +15,11 @@ public class EnemyMoveb : MonoBehaviour
             Destroy(this.gameObject);//このオブジェクトを削除
         }
     }
+    private void OnTriggerEnter(Collider other)//otherにはぶつかったオブジェクトが入れられる
+    {
+        if (other.gameObject.CompareTag("Bullet"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }
